@@ -35,7 +35,7 @@
 									<div id='msj'></div>
 									<?php echo validation_errors(); ?>
 
-										<?php echo form_open('admin/', array('class' => 'upd')); ?>
+										<?php echo form_open('/', array('class' => 'upd')); ?>
 										<div class="form-group">
 											<div class="col-sm-12">
 												<label>Usuario</label>
@@ -97,7 +97,7 @@
 		</div>
 
 		<footer class="text-center">
-			<b>Todos los derechos reservados BITE Consulting - 2017</b>
+			<b>Todos los derechos reservados © Copyright BITE Consulting - 2017</b>
 		</footer>
 		<script type='text/javascript' src="<?php echo base_url('js/jquery.js'); ?>"></script>
 		<script type='text/javascript' src="<?php echo base_url('js/bootstrap.min.js'); ?>"></script>

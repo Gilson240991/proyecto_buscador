@@ -10,7 +10,7 @@ function validarUsuario(){
 				if($('#clave').val()==""){
 					return false;
 				}
-				
+
 				$.ajax({
 					url:url_action,
 					type:method,
@@ -18,7 +18,7 @@ function validarUsuario(){
 					success:function(resp){
 						console.log(resp);
 						if(resp){
-							location.href=url+"dashboard/";
+							location.href=url+"admin/dashboard";
 						}else{
 							var msj='Este usuario no esta registrado';
 							$('#msj').html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><strong>¡Error! </strong>'+msj+'</div>');
