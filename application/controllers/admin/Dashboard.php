@@ -7,18 +7,15 @@ class Dashboard extends CI_Controller {
 	}
 	public function index()
 	{
-		$data['titulo']="Perfil del Usuario";
+		$data['titulo']="Dashboard";
 		$data['persona']=$this->usu->listarDatosPersona($this->session->userdata('usuario'));
 		$this->load->view('admin/guest/header',$data);
-		$this->load->view('admin/guest/nav');
-		$this->load->view('admin/dashboard/dashboard');
+		$this->load->view('admin/guest/aside');
+		$this->load->view('dashboard');
 		$this->load->view('admin/guest/footer');
 
 
-		
+
 	}
 
 }
-
-/* End of file dashboard.php */
-/* Location: ./application/controllers/admin/dashboard.php */

@@ -1,0 +1,202 @@
+/*
+    Document    :   main.css
+    Author      :   adrian mato
+    Description :   Estilo general
+*/
+
+@CHARSET "UTF-8";
+
+/*
+    Section    :    CSS RESET
+    Description:    Reseteamos practicamente todos los valores de los selectores para facilitar el cross-browsing
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em,
+font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, button{
+    border:0pt none;
+    font-family: inherit;
+    font-size: 100%;
+    font-style: inherit;
+    font-weight: inherit;
+    margin: 0pt;
+    padding: 0pt;
+    vertical-align: baseline;
+}
+body{
+    line-height: auto;
+    font-size: 12px !Important;
+    background: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0pt;
+    cursor: default;
+    color: #000;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 0pt;
+}
+strong{
+    font-weight: 700;
+}
+caption, th, td{
+    font-weight: normal;
+    text-align: left;
+}
+blockquote:before, blockquote:after, q:before, q:after{
+    main: "";
+}
+blockquote, q{
+    quotes: "" "";
+}
+html,body{
+    height: 100%;
+
+    overflow: hidden;
+}
+.clearfix{
+    overflow: hidden;
+}
+
+
+
+/*
+    Section    :    TOP
+    Description:    Cabecera de nuestro lector RSS
+*/
+#top{
+    height: 20px;
+    line-height: 0px;
+    padding: 0px 0px 0px 0px;
+    border-bottom: 1px solid #c9d7f1;
+}
+#top h1{
+    width: 1000px;
+    /*height: 77px;*/
+    /*background: transparent url("../img/logo.jpg") no-repeat 0 0;*/
+    display: block;
+    text-indent: -9999px;
+}
+#top h1 a{
+    display: block;
+}
+
+/*
+    Section:        LATERAL
+    Description:    Panel lateral donde mostramos las distintas fuentes RSS
+*/
+#lateral{
+    width: 260px;
+    height: 100%;
+    float: left;
+}
+#lateral h2{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px;
+}
+#lateral ul{
+    /*padding: 10px 0 0;*/
+    list-style: none;
+    list-style-position: inside;
+}
+#lateral li{
+    font-size: 13px;
+    position: relative;
+  /*  line-height: 24px;*/
+}
+#lateral li a{
+    display: block;
+    padding-left: 5px;
+    text-decoration: none;
+    color: #000;
+}
+#lateral li.active a, #lateral li.active a:hover{
+    background: #c2cff1
+}
+#lateral li a:hover{
+    background-color: #ffffcc;
+}
+#lateral li a span{
+    padding-left: 16px;
+}
+#lateral li a .icon{
+    width: 16px;
+    height: 16px;
+    position:absolute;
+    top: 4px;
+    background: transparent url("../img/rss_bg.gif") no-repeat left center;
+}
+
+
+/*
+    Section:        CONTENT
+    Description:    Zona donde cargamos el contenido seleccionado
+*/
+#content{
+    height: 100%;
+    margin-left: 260px;
+}
+#content h2{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px 0 20px;
+    background: #c2cff1;
+    font-size: 18px;
+    font-weight: 700;
+}
+#content #render{
+    height: 100%;
+    overflow: hidden;
+}
+#content #tip{
+    display: block;
+    padding: 20px;
+}
+#content #iframe{
+    display: none;
+}
+
+
+/*
+    Section:        TOGGLER
+    Description:    Boton que permitirá mostrar / ocultar el panel
+*/
+#toggler{
+    width: 16px;
+    height: 100%;
+    border-left: 1px solid #c2cff1;
+    background: #EBEFF9 url("../img/toggler_bg.gif") no-repeat left center;
+    float: left;
+}
+#toggler:hover{
+    background: #c2cff1 url("../img/toggler_bg.gif") no-repeat -25px center;
+    cursor: pointer;
+}
+#toggler.off{
+    background: #EBEFF9 url("../img/toggler_off_bg.gif") no-repeat left center;
+    margin-left: 0;
+}
+#toggler.off:hover{
+    background: #c2cff1 url("../img/toggler_off_bg.gif") no-repeat -25px center;
+    margin-left: 0;
+}
+
+
+
+/*
+    Section:        FOOTER
+    Description:    Pie de página del panel
+*/
+#footer{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    border-top: 1px solid #8c9dc8;
+    background: #C2CFF1;
+    position: fixed;
+    bottom: 0;
+}
+#footer span{
+    padding-right: 10px;
+}
