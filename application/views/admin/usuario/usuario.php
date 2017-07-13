@@ -1,10 +1,15 @@
 
 <script type='text/javascript' src="<?php echo base_url('js/usuario.js'); ?>"></script>
 
+<body>
+
+<div class="contenedor">
+
+
   <br>
   <p class="ws-cabecera">Administración de Usuarios</p>
   <hr>
-  <form>
+  <form id="form-usuario" action="<?php echo base_url('admin/usuario/') ?>">
   <div class="row">
     <div class="col-sm-6">
       <label for="">Texto a buscar</label>
@@ -301,3 +306,5 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal insertar -->
+  </div>
+</body>

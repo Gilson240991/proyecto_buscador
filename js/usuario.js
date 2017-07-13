@@ -15,7 +15,7 @@ function main(){
 }
 function mostrarDatos(valorBuscar,pagina){
   $.ajax({
-    url:"http://localhost/iglesiamisioneracasadeoracion/admin/usuario/mostrar",
+    url:$('#form-usuario').attr('action')+"mostrar",
     type:"POST",
     dataType:"json",
     data:{buscar:valorBuscar,nropagina:pagina},
@@ -81,7 +81,7 @@ function mostrarDatos(valorBuscar,pagina){
 
 function detallePersona(id){
   $.ajax({
-    url:"http://localhost/iglesiamisioneracasadeoracion/admin/usuario/listarInformacionPersona",
+    url:$('#form-usuario').attr('action')+"listarInformacionPersona",
     type:'post',
     dataType:'json',
     data:{id:id},
@@ -134,7 +134,7 @@ function update(){
   var Estado  = $('#Estado').val();
   //alert(Dni+" "+Nombre);
   $.ajax({
-    url:'http://localhost/iglesiamisioneracasadeoracion/admin/usuario/update',
+    url:$('#form-usuario').attr('action')+'update',
     type:'post',
     dataType:'json',
     data:{idusuario:idusuario,id:id,Nombre:Nombre,Paterno:Paterno,Materno:Materno,Dni:Dni,Direccion:Direccion,Correo:Correo,Celular:Celular,Cargo:Cargo,Estado:Estado},
@@ -162,7 +162,7 @@ function insert(){
   //alert(Dni+" "+Nombre);
   var campos = ["Dniinsert", "Paternoinsert", "Maternoinsert","Nombreinsert","Direccioninsert","Correoinsert","Celularinsert"];
   $.ajax({
-    url:'http://localhost/iglesiamisioneracasadeoracion/admin/usuario/insert',
+    url:$('#form-usuario').attr('action')+'insert',
     type:'post',
     dataType:'json',
     data:{Nombre:Nombre,Paterno:Paterno,Materno:Materno,Dni:Dni,Direccion:Direccion,Correo:Correo,Celular:Celular},
@@ -182,7 +182,7 @@ function deletepersona(id){
   var r = confirm("¿Desea eliminar este usuario?");
       if (r == true) {
         $.ajax({
-          url:'http://localhost/iglesiamisioneracasadeoracion/admin/usuario/deletepersona',
+          url:$('#form-usuario').attr('action')+'deletepersona',
           type:'post',
           dataType:'json',
           data:{id:id},
@@ -195,7 +195,7 @@ function deletepersona(id){
           }
         });
       } else {
-          
+
       }
 
 
