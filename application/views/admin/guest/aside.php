@@ -4,6 +4,7 @@
       <li><span class="folder"> Mantenimiento de Usuarios</span>
         <ul>
           <li><span class="file"><a href="<?php echo base_url('admin/usuario') ?>">Persona</a></span></li>
+          <li><span class="file"><a href="<?php echo base_url('admin/usuario/htmlcambiarclave') ?>">Cambiar clave</a></span></li>
         </ul>
       </li>
       <li><span class="folder">Buscador</span>

@@ -110,4 +110,12 @@ public function deletepersona(){
 		echo json_encode($json);
 }
 
+public function htmlcambiarclave(){
+$data['titulo']="Cambiar clave";
+$this->load->view('guest/header',$data);
+$this->load->view('admin/usuario/htmlcambiarclave');
+}
+public function cambiarclave(){
+
+}
 }

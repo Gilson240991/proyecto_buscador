@@ -140,9 +140,10 @@ html,body{
     height: 40px;
     line-height: 40px;
     padding: 0 10px 0 20px;
-    background: #c2cff1;
+    background: darkgreen;
     font-size: 18px;
     font-weight: 700;
+    color: #fff;
 }
 #content #render{
     height: 100%;
@@ -164,20 +165,20 @@ html,body{
 #toggler{
     width: 16px;
     height: 100%;
-    border-left: 1px solid #c2cff1;
-    background: #EBEFF9 url("../img/toggler_bg.gif") no-repeat left center;
+    border-left: 1px solid #303030;
+    background: #4C4C4C url("images/toggler_bg.gif") no-repeat left center;
     float: left;
 }
 #toggler:hover{
-    background: #c2cff1 url("../img/toggler_bg.gif") no-repeat -25px center;
+    background: #303030 url("images/toggler_bg.gif") no-repeat -25px center;
     cursor: pointer;
 }
 #toggler.off{
-    background: #EBEFF9 url("../img/toggler_off_bg.gif") no-repeat left center;
+    background: #4C4C4C url("images/toggler_off_bg.gif") no-repeat left center;
     margin-left: 0;
 }
 #toggler.off:hover{
-    background: #c2cff1 url("../img/toggler_off_bg.gif") no-repeat -25px center;
+    background: #303030 url("images/toggler_off_bg.gif") no-repeat -25px center;
     margin-left: 0;
 }
 
@@ -192,8 +193,8 @@ html,body{
     height: 30px;
     line-height: 30px;
     text-align: right;
-    border-top: 1px solid #8c9dc8;
-    background: #C2CFF1;
+    border-top: 1px solid darkgreen;
+    background: darkseagreen;
     position: fixed;
     bottom: 0;
 }
