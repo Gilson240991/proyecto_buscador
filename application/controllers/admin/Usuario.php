@@ -112,10 +112,29 @@ public function deletepersona(){
 
 public function htmlcambiarclave(){
 $data['titulo']="Cambiar clave";
+$data['persona']=$this->usu->listAllPersonas();
+
 $this->load->view('guest/header',$data);
 $this->load->view('admin/usuario/htmlcambiarclave');
 }
-public function cambiarclave(){
+public function listarUsuario(){
+	$id = $this->input->post('id');
 
+	$datos['usuario']=$this->usu->listarDatosPersonaPorID($id);
+	echo json_encode($datos);
+}
+
+public function actualizarusuario(){
+	$id= $this->input->post('id');
+
+	$usuario=array("clave"=>md5($this->input->post('nuevopass')),
+								 "usuario"=>$this->input->post('usuario'));
+	if($this->usu->updateusuariodatos($usuario,$id)){
+		$estado = true;
+	}else{
+		$estado =false;
+	}
+	$json['estado']=$estado;
+	echo json_encode($json);
 }
 }

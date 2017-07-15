@@ -130,6 +130,19 @@ function delete($id){
 	$this->db->where('IDent_Persona', $id);
 	return $this->db->delete('persona');
 }
+function listAllPersonas(){
+	$this->db->select('*');
+	$this->db->from('persona');
+	$query = $this->db->get();
+	if($query->num_rows() > 0 )
+			{
+					return $query->result();
+			}
+}
+function updateusuariodatos($usuario,$id){
+	$this->db->where('Id_usuario', $id);
+ return $this->db->update('usuario', $usuario);
+}
 }
 
 /* End of file login.php */

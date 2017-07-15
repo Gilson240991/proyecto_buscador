@@ -23,8 +23,8 @@ function mostrarDatos(valorBuscar,pagina){
     //  console.log(response);
       filas ="";
       $.each(response.personas,function(key,item){
-        filas+="<tr style='background-color:#fff'><td>"+item.IDent_Persona+"</td><td>"+item.Dni+"</td><td>"+item.Nombre+"</td><td>"+item.Paterno+"</td><td>"+item.Materno+"</td><td>"+item.Correo+"</td>"+
-        "<td><a href='#' data-toggle='modal' data-target='#modalEditar' class='btn btn-success' onclick='detallePersona("+item.IDent_Persona+")'>Editar</button></td><td><a type='button' class='btn btn-danger' onclick='deletepersona("+item.IDent_Persona+");'>Eliminar</button></td>"+
+        filas+="<tr><td>"+item.IDent_Persona+"</td><td>"+item.Dni+"</td><td>"+item.Nombre+"</td><td>"+item.Paterno+"</td><td>"+item.Materno+"</td><td>"+item.Correo+"</td>"+
+        "<td><a href='#' data-toggle='modal' data-target='#modalEditar' class='btn btn-success btn-xs' onclick='detallePersona("+item.IDent_Persona+")'>Editar</button></td><td><a type='button' class='btn btn-danger btn-xs' onclick='deletepersona("+item.IDent_Persona+");'>Eliminar</button></td>"+
         "</tr>";
       });
       $('#tbpersona').html(filas);

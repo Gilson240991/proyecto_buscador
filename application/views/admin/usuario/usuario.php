@@ -11,24 +11,11 @@
   <hr>
   <form id="form-usuario" action="<?php echo base_url('admin/usuario/') ?>">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <label for="">Texto a buscar</label>
     </div>
-    <div class="col-sm-6">
-      <label for="">Estado</label>
-    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12">
       <input type="text" name="txtBuscar" placeholder="Realizar busqueda por nombre, dni" class="form-control">
-    </div>
-    <div class="col-sm-4">
-      <select class="form-control" name="cboEstado">
-        <option value="">SELECCIONAR</option>
-        <option value="">ACTIVO</option>
-        <option value="">INACTIVO</option>
-      </select>
-    </div>
-    <div class="col-sm-2">
-      <button type="button" name="btnBuscarUsuario" onclick="mostrarDatos('');" class="btn btn-success btn-block">Buscar</button>
     </div>
 
   </div>
@@ -44,7 +31,7 @@
 <br>
   <div class="row">
     <div class="col-sm-12">
-      <table class="table table-bordered table-hover table-condensed">
+      <table class="table  table-striped table-condensed">
 
           <thead>
             <tr class="info" style="font-weight:bold">
@@ -208,7 +195,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h3>Agregar Persona</h3>
+          <h3>Agregar Usuario</h3>
         </div>
         <div class="modal-body">
           <form  class="form-horizontal" id='form-persona-actualizar'>
