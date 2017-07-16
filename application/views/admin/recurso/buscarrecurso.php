@@ -1,6 +1,10 @@
 
 <script type='text/javascript' src="<?php echo base_url('js/recurso.js'); ?>"></script>
-
+<style>
+  #tbrecurso tr td{
+   width: 5%;
+  }
+</style>
 <body>
 
 <div class="contenedor">
@@ -10,43 +14,41 @@
 
     <div class="well">
       <div class="row">
-        <div class="col-sm-12">
-              <input type="text" name="" value="" class="form-control" placeholder="Buscar por código, Nombre ó por Descripción">
-        </div>
+        <form id="form-recurso-buscar"  action="<?php echo base_url(); ?>">
+          <div class="col-sm-12">
+                <input type="text" name="txtBuscarrecurso" value="" class="form-control" placeholder="Buscar por código, Nombre ó por Descripción">
+          </div>
+        </form>
+
       </div>
     </div>
 
 
     <div class="row">
       <div class="col-sm-12">
-        <table class="table table-condensed table-striped">
-          <thead>
-            <tr>
-              <th>item</th>
-              <th>Código</th>
-              <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Imagen</th>
-              <th>Editar</th>
-              <th>Eliminar</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php for($i=1;$i<=6;$i++):?>
-            <tr>
-              <td>1</td>
-              <td>Q23WWS</td>
-              <td>MOTOR DIESEL</td>
-              <td>ESTE ES EL MOTOR DE ARRANQUE</td>
-              <td><img src="<?php echo base_url('img/2.jpg') ?>" height="100px" width="100px" alt=""></td>
-              <td><button type="button"class="btn btn-success btn-xs btn-block" name="button">Editar</button></td>
+        <div class="table-responsive">
+          <table class="table table-condensed table-striped">
+            <thead>
+              <tr>
+                <th>item</th>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Imagen</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody id="tbrecurso">
 
-              <td><button type="button"class="btn btn-danger btn-xs btn-block" name="button">Eliminar</button></td>
+            </tbody>
+          </table>
+        </div>
 
-            </tr>
-          <?php endfor; ?>
-          </tbody>
-        </table>
+        <div class="paginacion">
+
+        </div>
       </div>
     </div>
 </div>

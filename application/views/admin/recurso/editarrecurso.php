@@ -1,13 +1,18 @@
 
 <script type='text/javascript' src="<?php echo base_url('js/scriptrecurso.js'); ?>"></script>
+<style media="screen">
+.thumb {width: 100%; }
 
+</style>
 <body>
 
 <div class="contenedor">
   <br>
-  <p class="ws-cabecera">Crear Recurso</p>
+  <p class="ws-cabecera">Actualizar Recurso</p>
   <hr>
-  <form id="form-recurso" action="<?php echo base_url('admin/recurso/crearrecurso') ?>" enctype="multipart/form-data">
+    <?php foreach($recurso as $r):endforeach; ?>
+  <form id="form-recurso" action="<?php echo base_url('admin/recurso/actualizarrecurso') ?>" enctype="multipart/form-data">
+  <input type="hidden" name="hiddenidrecurso" id="hiddenidrecurso" value="<?php echo $r->IDent_Recurso ?>">
   <div class="row">
     <div class="col-sm-6">
         <div class="well">
@@ -23,10 +28,10 @@
               Código
             </label>
             <div class="col-sm-6">
-              <input type="text" name="codigo" id="codigo" value="" class="form-control">
+              <input type="text" name="codigo" id="codigo" value="<?php echo $r->Codigo; ?>" class="form-control">
             </div>
             <div class="col-sm-3">
-              <button type="button" class="btn btn-success btn-block" onclick="agregarrecurso();" name="button">Agregar</button>
+              <button type="button" class="btn btn-success btn-block" onclick="actualizarrecurso();" name="button">Actualizar</button>
             </div>
           </div>
 
@@ -35,7 +40,7 @@
               Nombre
             </label>
             <div class="col-sm-9">
-              <input type="text" name="nombre" id="nombre" value="" class="form-control">
+              <input type="text" name="nombre" id="nombre" value="<?php echo $r->Nombre; ?>" class="form-control">
             </div>
           </div>
 
@@ -44,7 +49,7 @@
               Descripción
             </label>
             <div class="col-sm-9">
-              <textarea name="descripcion" id="descripcion" rows="8" cols="80" class="form-control"></textarea>
+              <textarea name="descripcion" id="descripcion" rows="8" cols="80" class="form-control"><?php echo $r->Descripcion; ?></textarea>
             </div>
           </div>
 
@@ -55,8 +60,20 @@
             <div class="col-sm-9">
               <select class="form-control" name="estado" id="estado">
                 <option value="">Seleccionar</option>
-                <option value="1">ACTIVO</option>
-                <option value="2">INACTIVO</option>
+                <?php if($r->IDent_001_Estado==1){
+                  $op='selected';?>
+                    <option value="1" <?php echo $op ?>>ACTIVO</option>
+                    <option value="2">INACTIVO</option>
+                  <?php
+
+                }else{
+                  $op='selected';?>
+                  <option value="1">ACTIVO</option>
+                  <option value="2" <?php echo $op ?>>INACTIVO</option>
+                  <?php
+                }
+                  ?>
+
               </select>
             </div>
           </div>
@@ -68,15 +85,20 @@
               Imagen
             </label>
             <div class="col-sm-9">
-              <input type="file" name="imagen" id="imagen" value="" class="form-control">
+              <input type="file" name="imagen" id="imagen" value="<?php echo $r->Imagen ?>" class="form-control">
             </div>
           </div>
 
 
         </div>
     </div>
-    <div class="col-sm-6" id="list">
+    <div class="col-sm-6">
+      <div class="well" style="height:100%">
+        <output id="list">
+          <img src="<?php echo base_url("files/".$r->Imagen) ?>"  class='thumb'>
 
+        </output>
+      </div>
     </div>
   </div>
 </form>
@@ -96,7 +118,7 @@ var reader = new FileReader();
 reader.onload = (function (theFile) {
 return function (e) {
 // Insertamos la imagen
-document.getElementById("list").innerHTML = ['<div class="well" ><output><img style="width:100%;" src="', e.target.result, '" title="', escape(theFile.name), '"/></output></div>'].join('');
+document.getElementById("list").innerHTML = ['<img class="thumb" src="', e.target.result, '" title="', escape(theFile.name), '"/>'].join('');
 };
 })(f);
 reader.readAsDataURL(f);

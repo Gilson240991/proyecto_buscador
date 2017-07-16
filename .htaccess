@@ -1,3 +1,3 @@
 RewriteEngine on
-RewriteCond $1 !^(index\.php|robots\.txt|sitemap.xml|css|js|img)
+RewriteCond $1 !^(index\.php|robots\.txt|sitemap.xml|css|js|files)
 RewriteRule ^(.*)$ index.php?/$1[L]

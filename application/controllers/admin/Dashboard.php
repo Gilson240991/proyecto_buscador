@@ -7,6 +7,9 @@ class Dashboard extends CI_Controller {
 	}
 	public function index()
 	{
+		if(empty($this->session->usuario)){
+			redirect('login','refresh');
+		}
 		$data['titulo']="Dashboard";
 		$data['persona']=$this->usu->listarDatosPersona($this->session->userdata('usuario'));
 		$this->load->view('admin/guest/header',$data);

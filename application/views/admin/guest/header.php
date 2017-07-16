@@ -23,9 +23,16 @@
       }
     });
   });
+
+  </script>
+  <script type="text/javascript">
+  function cerrar_session() {
+      window.close();
+  }
   </script>
   <body>
 
     <div id="top">
-      <div style="float:right;margin-top:10px"><label>Usuario: <?php echo "gilson" ?></label>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="">Cerrar sesion</a>&nbsp;&nbsp;</div>
+      <?php foreach($persona as $p):endforeach; ?>
+      <div style="float:right;margin-top:10px"><label><b>Usuario:</b> <?php echo $p->Nombre." ".$p->Paterno." ".$p->Materno ?></label>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url('login/logout') ?>">Cerrar sesion</a>&nbsp;&nbsp;</div>
     </div>
