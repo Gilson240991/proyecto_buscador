@@ -18,7 +18,6 @@ class Login extends CI_Controller {
 	{
 
 		$this->load->model('usuario_model','usu');
-
 		$data=$this->input->post();
 		$usuario =$data['usuario'];
 		$clave =$data['clave'];

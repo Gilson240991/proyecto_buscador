@@ -12,6 +12,7 @@ class Dashboard extends CI_Controller {
 		}
 		$data['titulo']="Dashboard";
 		$data['persona']=$this->usu->listarDatosPersona($this->session->userdata('usuario'));
+		$data['tipo']=$this->usu->listarTipoUsuario($this->session->userdata('usuario'));
 		$this->load->view('admin/guest/header',$data);
 		$this->load->view('admin/guest/aside');
 		$this->load->view('dashboard');

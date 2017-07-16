@@ -1,10 +1,10 @@
 
 <script type='text/javascript' src="<?php echo base_url('js/recurso.js'); ?>"></script>
-<style>
-  #tbrecurso tr td{
-   width: 5%;
-  }
-</style>
+<link rel="stylesheet" href="<?php echo base_url('css/modalimagen.css'); ?>">
+
+<script type="text/javascript">
+
+</script>
 <body>
 
 <div class="contenedor">
@@ -36,10 +36,20 @@
                 <th>Descripción</th>
                 <th>Estado</th>
                 <th>Imagen</th>
+                <?php if($tipo->Nombre=="ADMINISTRADOR"){ ?>
+
                 <th>Editar</th>
                 <th>Eliminar</th>
+                <?php } ?>
               </tr>
             </thead>
+            <?php if($tipo->Nombre=="VISITANTE"){?>
+              <style>
+              .editar, .eliminar{
+                  display: none;
+                }
+              </style>
+            <?php } ?>
             <tbody id="tbrecurso">
 
             </tbody>
@@ -51,6 +61,18 @@
         </div>
       </div>
     </div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
 </div>
 </body>
 </html>

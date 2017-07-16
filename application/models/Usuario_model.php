@@ -143,6 +143,15 @@ function updateusuariodatos($usuario,$id){
 	$this->db->where('Id_usuario', $id);
  return $this->db->update('usuario', $usuario);
 }
+
+function listarTipoUsuario($usuario){
+	$this->db->select('*');
+	$this->db->from('usuario');
+	$this->db->join('tipo_usuario', 'usuario.IDent_Tipo = tipo_usuario.IDent_Tipo');
+	$this->db->where('usuario.usuario',$usuario);
+	$resultado = $this->db->get();
+	return $resultado->row();
+}
 }
 
 /* End of file login.php */

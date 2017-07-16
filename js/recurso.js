@@ -29,8 +29,8 @@ function mostrarDatos(valorBuscar,pagina){
         }else{
          estado ="INACTIVO";
         }
-        filas+="<tr><td>"+item.IDent_Recurso+"</td><td>"+item.Codigo+"</td><td>"+item.Nombre+"</td><td>"+item.Descripcion+"</td><td>"+estado+"</td><td><img src='"+url+"files/"+item.Imagen+"' widht='80px' height='80px'></td>"+
-        "<td><a href='"+url+"admin/recurso/editar/"+item.IDent_Recurso+"' class='btn btn-success btn-xs'>Editar</button></td><td><a type='button' class='btn btn-danger btn-xs' onclick='deleterecurso("+item.IDent_Recurso+",\""+item.Imagen+"\");'>Eliminar</button></td>"+
+        filas+="<tr><td>"+item.IDent_Recurso+"</td><td>"+item.Codigo+"</td><td>"+item.Nombre+"</td><td>"+item.Descripcion+"</td><td>"+estado+"</td><td><img src='"+url+"files/"+item.Imagen+"' class='myImg' id='img"+item.IDent_Recurso+"' onclick='mostrarimagen(\"img"+item.IDent_Recurso+"\")'  widht='60px' height='60px' alt='"+item.Nombre+"'></td>"+
+        "<td class='editar'><a href='"+url+"admin/recurso/editar/"+item.IDent_Recurso+"' class='btn btn-success btn-xs' >Editar</button></td><td class='eliminar'><a type='button' class='btn btn-danger btn-xs' onclick='deleterecurso("+item.IDent_Recurso+",\""+item.Imagen+"\");'>Eliminar</button></td>"+
         "</tr>";
       });
       $('#tbrecurso').html(filas);
@@ -104,4 +104,29 @@ function deleterecurso(id,imagen){
       } else {
 
       }
+}
+
+function mostrarimagen(string){
+
+  // Get the modal
+  var modal = document.getElementById('myModal');
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var img = document.getElementById(string);
+  //alert(img);
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+  }
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+  modal.style.display = "none";
+  }
+
 }

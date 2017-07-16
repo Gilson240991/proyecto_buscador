@@ -9,7 +9,8 @@ class Recurso extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('guest/header');
-		$this->load->view('admin/recurso/buscarrecurso');
+		$data['tipo']=$this->usu->listarTipoUsuario($this->session->userdata('usuario'));
+		$this->load->view('admin/recurso/buscarrecurso',$data);
 	}
 
 	public function mostrar(){

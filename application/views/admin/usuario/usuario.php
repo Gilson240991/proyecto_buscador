@@ -34,7 +34,7 @@
       <table class="table  table-striped table-condensed">
 
           <thead>
-            <tr class="info" style="font-weight:bold">
+            <tr style="font-weight:bold">
             <th>N°</th>
             <th>D.N.I</th>
             <th>Nombre</th>

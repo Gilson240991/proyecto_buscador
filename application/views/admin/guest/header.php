@@ -34,5 +34,5 @@
 
     <div id="top">
       <?php foreach($persona as $p):endforeach; ?>
-      <div style="float:right;margin-top:10px"><label><b>Usuario:</b> <?php echo $p->Nombre." ".$p->Paterno." ".$p->Materno ?></label>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url('login/logout') ?>">Cerrar sesion</a>&nbsp;&nbsp;</div>
+      <div style="float:right;margin-top:10px"><label><b><?php echo $tipo->Nombre." :" ?></b> <?php echo $p->Nombre." ".$p->Paterno." ".$p->Materno ?></label>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo base_url('login/logout') ?>">Cerrar sesion</a>&nbsp;&nbsp;</div>
     </div>
